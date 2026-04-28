@@ -28,7 +28,7 @@ def extract_table_to_csv(driver, output_file="table.csv"):
     wait = WebDriverWait(driver, 10)
     wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "table")))
 
-    table = driver.find_element(By.CLASS_NAME, "table")
+    table = driver.find_element(By.XPATH, "//*[@class='table']")
     columns = table.find_elements(By.CLASS_NAME, "y-column")
 
     headers = []
